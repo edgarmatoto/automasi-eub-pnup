@@ -8,9 +8,12 @@ driver = webdriver.Chrome()
 
 driver.get("https://simponi.poliupg.ac.id:8080/index.php")
 
+##############################
+# Masukkan disini
 nim = ''
 password = ''
 jumlah_mata_kuliah = 7
+##################################
 
 driver.find_element(By.NAME, "txtEmail").clear()
 driver.find_element(By.NAME, "txtEmail").send_keys(nim)

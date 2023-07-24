@@ -7,8 +7,8 @@ password = ''
 jumlah_mata_kuliah = 7
 ```
 
-jangan lupa install python kalau belum ada.
-install package di terminal vscode:
+jangan lupa install python kalau belum ada. Kalau sudah,
+install package di terminal IDE:
 ```
 pip install -r requirements.txt
 ```
@@ -16,3 +16,5 @@ terus jalankan
 ```
 python ./main.py
 ```
+
+sama-sama :)
