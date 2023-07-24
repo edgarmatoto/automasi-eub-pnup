@@ -17,4 +17,4 @@ terus jalankan
 python ./main.py
 ```
 
-sama-sama :)
+**Kasih star repo ini :)**
