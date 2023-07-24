@@ -4,7 +4,7 @@ Masukkan value nim, password, dan jumlah mata kuliah di file main.py
 ```
 nim = ''
 password = ''
-jumlah_mata_kuliah = 7
+jumlah_mata_kuliah = 
 ```
 
 jangan lupa install python kalau belum ada. Kalau sudah,
