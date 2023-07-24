@@ -32,27 +32,30 @@ klik_disini = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(B
 klik_disini.click()
 
 for i in range(1, jumlah_mata_kuliah + 1):
-    mata_kuliah = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, "cbMatakuliah"))
-    mata_kuliah.click()
+    try:
+        mata_kuliah = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, "cbMatakuliah"))
+        mata_kuliah.click()
 
-    list_mata_kuliah = mata_kuliah.find_elements(By.TAG_NAME, 'option')
-    list_mata_kuliah[i].click()
-        
-    for j in range(1, 22):
-        random_option = random.randint(1, 4)
-        selected_option = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, f"b{j}_{random_option}"))
-        selected_option.click()
-        
-        suggestion = ['kurang baik', 'cukup baik', 'baik', 'cukup baik', 'sangat baik']
+        list_mata_kuliah = mata_kuliah.find_elements(By.TAG_NAME, 'option')
+        list_mata_kuliah[i].click()
+            
+        for j in range(1, 22):
+            random_option = random.randint(1, 4)
+            selected_option = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, f"b{j}_{random_option}"))
+            selected_option.click()
+            
+            suggestion = ['kurang baik', 'cukup baik', 'baik', 'cukup baik', 'sangat baik']
 
-    for k in range(1, 3):
-        random_suggestion_index = random.randint(0, len(suggestion) - 1)
-        selected_suggestion = suggestion[random_suggestion_index]
+        for k in range(1, 3):
+            random_suggestion_index = random.randint(0, len(suggestion) - 1)
+            selected_suggestion = suggestion[random_suggestion_index]
 
-        suggestion_element = driver.find_element(By.NAME, f"jawabanSaran{k}")
-        suggestion_element.send_keys(selected_suggestion)
+            suggestion_element = driver.find_element(By.NAME, f"jawabanSaran{k}")
+            suggestion_element.send_keys(selected_suggestion)
 
-    submit_button_element = driver.find_element(By.ID, "Simpan")
-    submit_button_element.click()
+        submit_button_element = driver.find_element(By.ID, "Simpan")
+        submit_button_element.click()
+    except:
+        continue
 
 time.sleep(10)
