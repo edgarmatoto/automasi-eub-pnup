@@ -39,8 +39,9 @@ jumlah_mata_kuliah = len(select.options)
 
 for i in range(1, jumlah_mata_kuliah + 1):
     try:
+        select_element = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, "cbMatakuliah"))
+        select = Select(select_element)
         mata_kuliah = select.select_by_index(i)
-        mata_kuliah.click()
             
         for j in range(1, 22):
             random_option = random.randint(1, 4)
