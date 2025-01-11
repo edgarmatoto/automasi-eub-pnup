@@ -1,27 +1,25 @@
 import time
 import random
 import os
-from dotenv import load_dotenv
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.select import Select
 
-load_dotenv()
-
 driver = webdriver.Chrome()
 
 driver.get("https://simponi.poliupg.ac.id:8080/index.php")
 
-nim = os.getenv("NIM")
-password = os.getenv("PASSWORD")
+# Masukkan NIM dan PASSSWORD akun Simponi di dalam tanda petik dibawah
+NIM = "42522011" 
+PASSWORD = "Kontolusjr123*"
 
 driver.find_element(By.NAME, "txtEmail").clear()
-driver.find_element(By.NAME, "txtEmail").send_keys(nim)
+driver.find_element(By.NAME, "txtEmail").send_keys(NIM)
 
 driver.find_element(By.NAME, "txtPassword").clear()
-driver.find_element(By.NAME, "txtPassword").send_keys(password)
+driver.find_element(By.NAME, "txtPassword").send_keys(PASSWORD)
 
 Login = driver.find_element(By.NAME, "Button")
 Login.click()
@@ -44,11 +42,11 @@ for i in range(1, jumlah_mata_kuliah + 1):
         mata_kuliah = select.select_by_index(i)
             
         for j in range(1, 22):
-            random_option = random.randint(1, 4)
+            random_option = random.randint(2, 4)
             selected_option = WebDriverWait(driver, timeout=25).until(lambda d: d.find_element(By.ID, f"b{j}_{random_option}"))
-            selected_option.click()
+            selected_option.click() 
         
-        suggestion = ['kurang baik', 'cukup baik', 'baik', 'cukup baik', 'sangat baik']
+        suggestion = ['cukup baik', 'baik', 'sangat baik']
         for k in range(1, 3):
             random_suggestion_index = random.randint(0, len(suggestion) - 1)
             selected_suggestion = suggestion[random_suggestion_index]

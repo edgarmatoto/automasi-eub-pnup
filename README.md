@@ -2,25 +2,20 @@
 
 1. Download / Clone repository ini
 
-2. Buat file .env atau buka Command Prompt dan jalankan:
+2. Buka file main.py dan masukkan nim password simponi, contohnya:
 ```
-cp .env.example .env
-```
-
-3. Buka file .env dan masukkan nim password simponi
-```
-NIM=
-PASSWORD=
+NIM="42521234"
+PASSWORD="qwerty123"
 ```
 
-4. Install python & pip kalau belum ada. di CMD jalankan
+3. Install python & pip kalau belum ada. di CMD jalankan
 ```
 python --version
 pip --version
 ```
 jika sudah terinstal, pastikan dua perintah diatas menampilkan versi nya dan tidak ada error muncul
 
-5. Jika sudah, install library dgn cara
+4. Jika sudah, install library dgn cara
 di Command Prompt jalankan:
 ```
 pip install -r requirements.txt
